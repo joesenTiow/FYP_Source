@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719702391982",
+    "project_id": "final-year-project-d3c27",
+    "storage_bucket": "final-year-project-d3c27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719702391982:android:b5c2129cc563ff7bd9813f",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.SolarSystemAR"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719702391982-nq3kj8hinslde1f2uqrpomgfbto4q97o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYjtlEpO56hEFK-LaLPDEADYulYXLjHQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719702391982-nq3kj8hinslde1f2uqrpomgfbto4q97o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
