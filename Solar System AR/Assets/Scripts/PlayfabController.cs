@@ -33,8 +33,12 @@ public class PlayfabController : MonoBehaviour
 
 	// Settings panel
 	public GameObject settingsPanel;
-	public Lean.Gui.LeanToggle soundToggle;
-	public Lean.Gui.LeanToggle musicToggle;
+	// public Lean.Gui.LeanToggle soundToggle;
+	// public Lean.Gui.LeanToggle musicToggle;
+	public Button SoundOnButton;
+	public Button SoundOffButton;
+	public Button MusicOnButton;
+	public Button MusicOffButton;
 
 	// Login Error Message panel
 	// Displays error message when username or password is incorrect etc.
@@ -77,28 +81,44 @@ public class PlayfabController : MonoBehaviour
 			PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnUserNotLoggedIn);
 		}
 
-		// Restore toggle settings for music.
-		if (PlayerPrefs.GetString("ISMUSICON") == "True")
-		{
-			musicToggle.TurnOn();
-		}
-		else
-		{
-			musicToggle.TurnOff();
-		}
+		
+	}
 
-		if (PlayerPrefs.GetString("ISSOUNDON") == "True")
-		{
-			soundToggle.TurnOn();
-		}
-		else
-		{
-			soundToggle.TurnOff();
+    private void Update()
+    {
+		if (MusicOnButton != null)
+        {
+			// Restore toggle settings for music.
+			if (PlayerPrefs.GetString("ISMUSICON") == "True")
+			{
+				// musicToggle.TurnOn();
+				MusicOnButton.gameObject.SetActive(true);
+				MusicOffButton.gameObject.SetActive(false);
+			}
+			else
+			{
+				// musicToggle.TurnOff();
+				MusicOnButton.gameObject.SetActive(false);
+				MusicOffButton.gameObject.SetActive(true);
+			}
+
+			if (PlayerPrefs.GetString("ISSOUNDON") == "True")
+			{
+				// soundToggle.TurnOn();
+				SoundOnButton.gameObject.SetActive(true);
+				SoundOffButton.gameObject.SetActive(false);
+			}
+			else
+			{
+				// soundToggle.TurnOff();
+				SoundOnButton.gameObject.SetActive(false);
+				SoundOffButton.gameObject.SetActive(true);
+			}
 		}
 	}
 
-	#region Login
-	public void OnClickLogin()
+    #region Login
+    public void OnClickLogin()
 	{
 		// Log the user in
 		var request = new LoginWithPlayFabRequest
@@ -128,8 +148,6 @@ public class PlayfabController : MonoBehaviour
 		errorMessage.text = error.GenerateErrorReport();
 
 		// Checks for different kinds of errors.
-
-		
 		if (errorMessage.text.Contains("The Username field is required.") 
 			&& errorMessage.text.Contains("The Password field is required."))
         {

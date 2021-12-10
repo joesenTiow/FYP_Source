@@ -4586,6 +4586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topicNumber: 0
   backButton: {fileID: 1762031397}
+  detailWindowButton: {fileID: 2034914465}
   finishButton: {fileID: 559735142}
   infoButton: {fileID: 1304982128}
   nextButton: {fileID: 1849953562}

@@ -77,7 +77,7 @@ public class QuizManager : MonoBehaviour
 		switch (question)
 		{
 			case 1:
-				Question1(); // Compare: Which object is bigger? The Sun or Earth?
+				// Question1(); // Compare: Which object is bigger? The Sun or Earth?
 				break;
 			case 2:
 				Question2(); // TrueFalse: The Sun revolves around the Earth.

@@ -10,6 +10,7 @@ public class LearnManager : MonoBehaviour
 	public int topicNumber = 0;
 
 	public Button backButton;
+	public Button detailWindowButton;
 	public Button finishButton;
 	public Button infoButton;
 	public Button nextButton;
@@ -112,6 +113,11 @@ public class LearnManager : MonoBehaviour
 		}
 		*/
 
+		if (topicNumber == 2)
+        {
+			detailWindowButton.gameObject.SetActive(false);
+        }
+
 		detailWindow.SetActive(false);
 	}
 
@@ -137,6 +143,7 @@ public class LearnManager : MonoBehaviour
 						+ "\nOrbital velocity (km/s): " + orbitalVelocityValues[topicNumber]
 						+ "\nNumber of moons: " + numberOfMoonsValues[topicNumber];
 
+		// Set audio clips according to the text.
 		if (text1.gameObject.activeSelf)
         {
 			lessonAudio = clips1[topicNumber];
@@ -236,6 +243,7 @@ public class LearnManager : MonoBehaviour
 		detailWindow.SetActive(false);
 
 		backButton.interactable = false;
+		detailWindowButton.interactable = false;
 		infoButton.interactable = false;
 		rotateButton.interactable = false;
 		stopRotateButton.interactable = false;
